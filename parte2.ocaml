@@ -1,0 +1,10 @@
+let total lista =
+  List.fold_left (fun acc p -> acc +. p.precio) 0.0 lista
+
+let () =
+  print_endline "Lista de productos:";
+  List.iter (fun p ->
+    Printf.printf "%s - Q%.2f\n" p.nombre p.precio
+  ) productos;
+
+  Printf.printf "\nTotal: Q%.2f\n" (total productos)
